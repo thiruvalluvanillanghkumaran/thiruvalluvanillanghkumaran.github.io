@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illanghkumaran Thiruvalluvan | Expert Azure DevOps & Automation Engineer</title>
+    <style>
+        :root {
+            --bg-dark: #070f1e;
+            --bg-card: #111e35;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 242, 254, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Fixed Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(7, 15, 30, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-tier {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Layout Split for Profile Picture */
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            min-height: 100vh;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        /* Passport Executive Photo Frame */
+        .hero-image-frame {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .passport-photo {
+            width: 280px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+            transition: var(--transition);
+        }
+
+        .hero-image-frame::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(79, 172, 254, 0.3);
+            border-radius: 12px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .hero-image-frame:hover .passport-photo {
+            transform: scale(1.02);
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.45);
+        }
+
+        .hero-badge {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: fit-content;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .hero-desc {
+            max-width: 650px;
+            margin: 20px 0 30px 0;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        /* High-Converting Recruiter Flags/Tags */
+        .recruiter-hooks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .hook-tag {
+            background: rgba(0, 242, 254, 0.05);
+            border: 1px dashed var(--accent-cyan);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hook-tag span {
+            color: var(--accent-cyan);
+        }
+
+        /* Buttons & Components */
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            color: #000000;
+            padding: 16px 36px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 2px solid var(--accent-cyan);
+            padding: 14px 34px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 242, 254, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .stats-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .sec-title {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .sec-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-cyan);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: var(--transition);
+        }
+
+        .skill-box:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .skill-box h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .tag-pool {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(30, 41, 59, 0.7);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            font-family: monospace;
+        }
+
+        .tag-highlight {
+            border-color: rgba(0, 242, 254, 0.4);
+            color: var(--accent-cyan);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 25px;
+            width: 2px;
+            height: calc(100% + 40px);
+            background: #1e293b;
+        }
+
+        .timeline-item:last-child::after { display: none; }
+
+        .time-meta {
+            font-family: monospace;
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .role-title {
+            font-size: 1.6rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .company-meta {
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        .bullet-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.02);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: rgba(17, 30, 53, 0.5);
+            border: 1px solid #1e293b;
+            padding: 20px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .recruiter-panel {
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            border: 1px solid var(--accent-cyan);
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .recruiter-panel h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .recruiter-panel p {
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #1e293b;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 992px) {
+            .hero-wrapper {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+                padding-top: 140px;
+            }
+            .hero-badge { margin: 0 auto 25px auto; }
+            .recruiter-hooks { justify-content: center; }
+            .btn-group { justify-content: center; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.6rem; }
+            .container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Navigation -->
+    <header>
+        <div class="container nav-tier">
+            <div class="nav-logo">IT. DEVOPS</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact" style="color: var(--accent-cyan); border: 1px solid var(--accent-cyan); padding: 6px 16px; border-radius: 4px;">Hire Me</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Stage with Passport Photo Frame -->
+        <section class="hero" id="about">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="hero-badge">Top Performer Award Recipient (TCS)</div>
+                    <h1 class="hero-title">ILLANGHKUMARAN</h1>
+                    <h1 class="hero-title hero-gradient-text">THIRUVALLUVAN</h1>
+                    <h2 class="hero-tagline">Senior Azure DevOps & Automation Engineer</h2>
+                    <p class="hero-desc">
+                        Over 6+ years of cloud engineering excellence at <strong>Tata Consultancy Services</strong> designing bulletproof infrastructure automation, modernizing architectures with AKS, and building enterprise scaling structures.
+                    </p>
+
+                    <!-- Strategic Recruiter Conversion Tags -->
+                    <div class="recruiter-hooks">
+                        <div class="hook-tag">⚡ <span>Enterprise Scale:</span> 50+ Azure Resource Topologies</div>
+                        <div class="hook-tag">📈 <span>Efficiency:</span> -75% Provisioning Delays</div>
+                        <div class="hook-tag">🛡️ <span>Resilience:</span> 99.95% High Availability Up-Time</div>
+                        <div class="hook-tag">💰 <span>Cloud Economics:</span> -15% Cloud Overhead Cost</div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <a href="mailto:illangh.thiru@gmail.com?subject=Interview Scheduling / Recruitment - Illanghkumaran&body=Hi Illanghkumaran,%0D%0A%0D%0AWe reviewed your cloud engineering profile and would love to initiate technical interview rounds for a DevOps opening at our company.%0D%0A%0D%0ABest Regards," class="btn-primary">
+                            ✉️ Fast-Track Interview Loop
+                        </a>
+                        <a href="https://www.linkedin.com/in/illanghkumaranthiruvalluvan/" target="_blank" class="btn-secondary">
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Photo Integration Frame -->
+                <div class="hero-image-frame">
+                    <img src="1733064242258.jpg" alt="Illanghkumaran Thiruvalluvan Profile Headshot" class="passport-photo">
+                </div>
+            </div>
+
+            <!-- Dynamic Metric Strip -->
+            <div class="stats-strip">
+                <div class="stat-card">
+                    <div class="stat-num" style="color: var(--accent-cyan);">6+ Yrs</div>
+                    <div class="stat-label">Enterprise Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num" style="color: #38bdf8;">-75%</div>
+                    <div class="stat-label">Infra Provisioning Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num" style="color: #34d399;">99.95%</div>
+                    <div class="stat-label">High-Availability Uptime</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num" style="color: #f43f5e;">100%</div>
+                    <div class="stat-label">Outage Prevention (SSL)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Ecosystem Section -->
+        <section id="skills">
+            <h2 class="sec-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h3>☁️ Cloud & Architecture</h3>
+                    <div class="tag-pool">
+                        <span class="tag tag-highlight">Azure IaaS/PaaS</span>
+                        <span class="tag tag-highlight">AKS (Kubernetes)</span>
+                        <span class="tag">Hybrid Cloud</span>
+                        <span class="tag">Migration</span>
+                        <span class="tag">Azure SQL</span>
+                        <span class="tag">Cosmos DB</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <h3>⚡ DevOps & IaC</h3>
+                    <div class="tag-pool">
+                        <span class="tag tag-highlight">Terraform</span>
+                        <span class="tag tag-highlight">Azure Pipelines</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">GitOps</span>
+                        <span class="tag">PowerShell</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <h3>🛡️ Security & Ops</h3>
+                    <div class="tag-pool">
+                        <span class="tag tag-highlight">Cloudflare WAF</span>
+                        <span class="tag">Venafi PKI</span>
+                        <span class="tag">Sectigo</span>
+                        <span class="tag">Grafana</span>
+                        <span class="tag">Log Analytics</span>
+                        <span class="tag">CIS/NIST</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chronological Engineering Experience -->
+        <section id="experience">
+            <h2 class="sec-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-meta">Feb 2020 – Present</div>
+                    <div class="role-title">Cloud Administrator / DevOps Engineer</div>
+                    <div class="company-meta">Tata Consultancy Services (Chennai, India)</div>
+                    <ul class="bullet-list">
+                        <li><strong>Cloud Optimization:</strong> Engineered and managed 50+ enterprise-scale Azure resources using declarative Terraform IaC layouts, accelerating provisioning pipelines by 75%.</li>
+                        <li><strong>Kubernetes Ingestion:</strong> Migrated 15+ complex legacy payloads over to Azure Kubernetes Service (AKS), deploying custom multi-region failover protocols securing 99.95% uptime guarantees.</li>
+                        <li><strong>CI/CD Acceleration:</strong> Cut continuous integration and delivery lifecycles down from 2 hours to 15 flat minutes by writing advanced Azure Pipelines workflows.</li>
+                        <li><strong>Zero-Outage Security:</strong> Implemented automated enterprise SSL/TLS certificate rotation loops leveraging Venafi API endpoints mapped securely inside Azure Key Vault.</li>
+                        <li><strong>Traffic Mastery:</strong> Set auto-scaling matrices across active AKS worker nodes to seamlessly defend operations against 200% volatile transaction spikes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Projects Showcase -->
+        <section id="projects">
+            <h2 class="sec-title">Featured Infrastructure Projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <h3 style="color: #ffffff; margin-bottom:15px;">🛠️ Automated Cloudflare Zone Engine</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+                        Wrote custom automation suites integrating advanced PowerShell modules straight into core Azure DevOps Release steps to automate system DNS modifications.
+                    </p>
+                    <div style="color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px;">
+                        📈 Result: Eliminated 80% manual configuration toil (Saved 30+ engineering hours/month).
+                    </div>
+                    <div class="tag-pool">
+                        <span class="tag">PowerShell</span>
+                        <span class="tag">Azure Pipelines</span>
+                        <span class="tag">Cloudflare API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 style="color: #ffffff; margin-bottom:15px;">🌐 Massive Enterprise Domain Migration</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
+                        Led migration architecture migrating 2000+ alive operational production domains off physical on-premise F5 Nameservers onto Cloudflare edge environments.
+                    </p>
+                    <div style="color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px;">
+                        📈 Result: 95% latency performance surge completed with zero business downtime.
+                    </div>
+                    <div class="tag-pool">
+                        <span class="tag">F5 Networks</span>
+                        <span class="tag">Cloudflare DNS</span>
+                        <span class="tag">Migration Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Track -->
+        <section id="certs">
+            <h2 class="sec-title">Verified Qualifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <span class="cert-icon">🥇</span>
+                    <div>
+                        <div style="color:#fff; font-weight:600;">Microsoft DevOps Solutions</div>
+                        <div style="color:var(--text-muted); font-size:0.85rem;">AZ-400 Certification</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🥈</span>
+                    <div>
+                        <div style="color:#fff; font-weight:600;">Azure Administrator Associate</div>
+                        <div style="color:var(--text-muted); font-size:0.85rem;">AZ-104 Certification</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🥉</span>
+                    <div>
+                        <div style="color:#fff; font-weight:600;">Power BI Data Analyst</div>
+                        <div style="color:var(--text-muted); font-size:0.85rem;">PL-300 Certification</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">⚙️</span>
+                    <div>
+                        <div style="color:#fff; font-weight:600;">Terraform Associate</div>
+                        <div style="color:var(--text-muted); font-size:0.85rem;">HashiCorp (In Progress)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Recruitment Conversion Funnel -->
+        <section id="contact">
+            <div class="recruiter-panel">
+                <h2>Optimize Your Infrastructure Pipeline</h2>
+                <p>
+                    Looking to scale your Kubernetes footprint, automate infrastructure deployment bottlenecks, or enforce robust security controls? Let's connect immediately.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="mailto:illangh.thiru@gmail.com?subject=Schedule Technical Interview - Tata Consultancy Services Talent&body=Hi Illanghkumaran,%0D%0A%0D%0AWe love your cloud portfolio. We would like to sync up and block calendar time for a technical screening round regarding open DevOps positions here.%0D%0A%0D%0ABest," class="btn-primary">
+                        📬 Schedule An Interview Loop
+                    </a>
+                </div>
+                <div style="margin-top: 25px; font-family: monospace; font-size: 0.9rem; color: var(--accent-cyan);">
+                    Direct Dial: +91 7402617608
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        Illanghkumaran Thiruvalluvan &copy; 2026 | Verified Portfolio Profile
+    </footer>
+
+</body>
+</html>
