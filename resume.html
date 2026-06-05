@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Viewer | Illanghkumaran Thiruvalluvan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #070f1e;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Top Action Bar for Clean Navigation */
+        .top-bar {
+            background-color: #111e35;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            border-bottom: 1px solid rgba(0, 242, 254, 0.15);
+            justify-content: space-between;
+        }
+
+        .back-btn {
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            color: #4facfe;
+            transform: translateX(-3px);
+        }
+
+        .doc-title {
+            color: #e2e8f0;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Interactive PDF Stage - Safe View-Only Mode */
+        .viewer-stage {
+            flex: 1;
+            background-color: #0b1322;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { padding: 0 15px; }
+            .doc-title { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Functional Navigation Strip -->
+    <div class="top-bar">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        <div class="doc-title">Official Resume</div>
+        <div style="width: 110px;"></div> <!-- Structural Spacing Element -->
+    </div>
+
+    <!-- Active PDF Rendering Layer -->
+    <div class="viewer-stage">
+        <!-- Secure embedded view blocking toolbars to prioritize reading over downloading inside the browser UI -->
+        <iframe src="Illanghkumaran_Thiruvalluvan_Azure_DevOps_Automation_Engineer.pdf#toolbar=0&navpanes=0&scrollbar=1"></iframe>
+    </div>
+
+</body>
+</html>
