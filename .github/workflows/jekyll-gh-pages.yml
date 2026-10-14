@@ -1,4 +1,8 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+#-------------------------------------------------------------
+# YAML file for GitHub Actions workflow to deploy a Jekyll site to GitHub Pages
+# Created by: Illanghkumaran created on 2026-06-10
+# Approved by: Illanghkumaran Approved on 2026-06-10
+#--------------------------------------------------------------
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
