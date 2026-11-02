@@ -1,0 +1,54 @@
+# ---------------------------------------------
+# Allow Traditional search engines
+# ---------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# ---------------------------------------------
+# Block google gemini/ Vertex ai training
+# ---------------------------------------------
+
+User-agent: Google-extended
+Disallow: /
+
+# ---------------------------------------------
+# Block Open AI
+# ---------------------------------------------
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow:  /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# ---------------------------------------------
+# Block Anthropic
+# ---------------------------------------------
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Anthropic-ai
+Disallow: /
+
+# ---------------------------------------------
+# Block perplexity & other common ai sources
+# ---------------------------------------------
+
+User-agent: perplexityBot
+Disallow: /
