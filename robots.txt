@@ -52,3 +52,6 @@ Disallow: /
 
 User-agent: perplexityBot
 Disallow: /
+
+User-agent: AllBot
+Disallow: /
