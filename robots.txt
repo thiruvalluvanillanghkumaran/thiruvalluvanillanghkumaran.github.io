@@ -53,5 +53,9 @@ Disallow: /
 User-agent: perplexityBot
 Disallow: /
 
-User-agent: AllBot
+# ---------------------------------------------
+# Block gemini
+# ---------------------------------------------
+
+User-agent: geminiBot
 Disallow: /
